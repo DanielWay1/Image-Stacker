@@ -1,0 +1,5 @@
+# Ignore any binaries, Emacs backups, and pmm files.
+test
+*.o
+*~
+*.ppm
