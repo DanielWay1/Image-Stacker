@@ -6,31 +6,41 @@
 #include <string>
 #include <vector>
 
-using namespace std;
+class Stacker {
+private:
 
-class stacker{
- private:
-  // Copied these from the assignment where it says the class needs to at least contain these
-  string magic_number;
+
+  // I'm not sure if this is supposed to be here but the compiler wasn't happy if I declared just a prototype here and implemented it in stacker.cpp
+  struct Pixel{
+    int red;
+    int green;
+    int blue;
+  };
+  
+  std::string magic_number; // P3
   int width;
   int height;
   int max_color;
-  vector<int> pixels;
+  
+  std::vector<Pixel> pixelsVec; // vector of STACKED images (so what gets outputted to the file)
+  std::vector<Pixel> vec1; // used to get all the parts of the vector for averaging reasons
+  std::vector<Pixel> vec2;
+  
+  void processImage(const std::string& filename);
+  
+  void calculateAverages(int numImages);
+  
+  void writeStackedImage(const std::string& outputFilename);
+ 
 
-  struct pixel; // I don't remember how structs work so feel free to change this as needed
-                // Not sure if the code for the struct goes in stacker.cpp (where it is now)
-                //  or if it's supposed to go here
 
- public:
-  // Still need to add the function prototypes here
-
-
-
+  
+public: // what gets called in main
+  
+  Stacker(const std::string& filename);
+  
+  void stackImages(const std::string& baseName, int numImages);
+   
 };
-
-
-
-
-
 
 #endif //STACKER_H
