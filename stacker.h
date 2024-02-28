@@ -6,6 +6,15 @@
 #include <string>
 #include <vector>
 
+
+/**
+ * 
+ *
+ * @class Stacker stacker.h "Image-Stacker/stacker.h"
+ * @brief a class called stacker that carries methods and members that will print out images from ppm files  
+ *
+ */
+
 class Stacker {
 private:
 

@@ -3,9 +3,7 @@
 // Probably best to delete unneeded ones before turn in 
 #include <iostream>
 #include "stacker.h"
-#include <fstream>
 #include <string>
-#include <vector>
 
 
 using namespace std;

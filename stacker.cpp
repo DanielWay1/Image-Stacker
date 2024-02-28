@@ -1,3 +1,12 @@
+/**
+ * @file stacker.cpp
+ * @author Gerardo Gonzalez
+ * @date 2024-02-27
+ * @brief this is the meat of the methods from the stacker class
+ * 
+ * this file contains all of the methods from the stacker class and excutes them
+ */
+
 
 #include <iostream>
 #include "stacker.h"
@@ -8,6 +17,15 @@
 using namespace std;
 
 
+
+/**
+ * this method opens the ppm file and implements all of its contents into the members of the stacker class
+ *
+ * @param const string& filename this allows the method to receive the name of the image file to be processed
+ * @pre 
+ * @post All of the header information has now been read into the members
+ * 
+ */
 Stacker::Stacker(const string& filename){
   
   ifstream inFile(filename);
@@ -32,6 +50,17 @@ Stacker::Stacker(const string& filename){
 
 
 
+
+
+/**
+ * this method essentially looks for each ppm file name, processes n reads each ppm image from the file and pushes its contents into a new ppm file
+ *
+ * @param const string& baseName It represents the base name of the images that are going to be stacked
+ * @param int numImages represents the number of images to be stacked and determines how many iterations the function will go through in the loop, processing each image
+ * @pre 
+ * @post this method processes each ppm image, gets an average of all the ppm images, and pushes the contents of all the files into a new ppm file 
+ * 
+ */
 void Stacker::stackImages(const string& baseName, int numImages){
 
   for(int i = 1; i <= numImages; ++i){
@@ -63,6 +92,15 @@ void Stacker::stackImages(const string& baseName, int numImages){
 
 
 
+
+/**
+ * this method processes each ppm image by putting the header contents, reading in the pixel data into the members from the stracker class into vec1, which it's contents are then pushed and added together into vec2 clearing vec1, and then repeat for the next file. 
+ *
+ * @param const string& filename allows the method to receive the name of the image file to be processed
+ * @pre 
+ * @post it now skips the header information, reads in pixel data, adds the contents from vec1 into vec2 together, and repeats 
+ * 
+ */
 void Stacker::processImage(const string& filename){
 
   ifstream inputFile(filename);
@@ -104,6 +142,15 @@ void Stacker::processImage(const string& filename){
 
 
 
+
+/**
+ * this method calculates the average of all the added ppm images and sets pixelVec to vec2
+ *
+ * @param int numImages represents the number of images to be stacked 
+ * @pre 
+ * @post checks if vec2 is empty, divides the pixel data by the number of files there are, and sets the contents of vec2 into pixelVec 
+ * 
+ */
 void Stacker::calculateAverages(int numImages){
   // checks if vec2 is empty for debugging purposes
   if(vec2.empty()){
@@ -136,6 +183,15 @@ void Stacker::calculateAverages(int numImages){
 
 
 // Writes the final outputted image
+
+/**
+ * Writes the final outputted image
+ *
+ * @param const string& outputFilename represents the filename of the output image
+ * @pre 
+ * @post It writes the header and the pixel data into the file
+ * 
+ */
 void Stacker::writeStackedImage(const string& outputFilename){
 
   ofstream outFile(outputFilename);
