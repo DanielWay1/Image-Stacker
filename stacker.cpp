@@ -62,7 +62,7 @@ Stacker::Stacker(const string& filename){
  * 
  */
 void Stacker::stackImages(const string& baseName, int numImages){
-
+  cout << "Stacking images: " << endl;
   for(int i = 1; i <= numImages; ++i){
     string filename = "ppms/" + baseName + "/" + baseName + "_";
 
@@ -85,8 +85,10 @@ void Stacker::stackImages(const string& baseName, int numImages){
   
   // Write the stacked image to a new ppm file
   writeStackedImage(baseName + ".ppm");
-  
+
+  cout << endl;
   cout << "Stacking succeeded." << endl;
+  cout << "Output written to: " << baseName + ".ppm" << endl;
   
 }
 
