@@ -1,8 +1,8 @@
 /**
  * @file stacker.cpp
- * @author Gerardo Gonzalez
+ * @author Gerardo Gonzalez & Daniel Way 
  * @date 2024-02-27
- * @brief this is the meat of the methods from the stacker class
+ * @brief this is the header of the methods from the stacker class
  * 
  * this file contains all of the methods from the stacker class and excutes them
  */
@@ -184,7 +184,6 @@ void Stacker::calculateAverages(int numImages){
 
 
 
-// Writes the final outputted image
 
 /**
  * Writes the final outputted image

@@ -1,3 +1,12 @@
+/**
+ * @file main.cpp
+ * @author Gerardo Gonzalez & Daniel Way
+ * @date 2024-03-01
+ * @brief where the execution procces takes place
+ * 
+ * this is where the main function and any other nescessary code, like stacker and stackImages from the stacker class, are executed in the program 
+ */
+
 
 #include <iostream>
 #include "stacker.h"
