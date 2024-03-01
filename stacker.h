@@ -6,6 +6,15 @@
 #include <string>
 #include <vector>
 
+
+/**
+ * 
+ *
+ * @class Stacker stacker.h "Image-Stacker/stacker.h"
+ * @brief a class called stacker that carries methods and members that will print out images from ppm files  
+ *
+ */
+
 class Stacker {
 private:
 
@@ -26,20 +35,21 @@ private:
   std::vector<Pixel> vec1; // used to get all the parts of the vector for averaging reasons
   std::vector<Pixel> vec2;
   
-  void processImage(const std::string& filename);
+  void processImage(const std::string& filename); //reads and and processes each ppm file 
   
-  void calculateAverages(int numImages);
+  void calculateAverages(int numImages); // calculates the average of all the added pixel images
   
-  void writeStackedImage(const std::string& outputFilename);
+  void writeStackedImage(const std::string& outputFilename); //writes the final outputted image
  
 
 
   
 public: // what gets called in main
   
-  Stacker(const std::string& filename);
-  
-  void stackImages(const std::string& baseName, int numImages);
+  Stacker(const std::string& filename); //opens a ppm file and implements its contents into the
+                                       // members of the class
+
+  void stackImages(const std::string& baseName, int numImages); //essentially looks for each ppm file,                                                                //names it, goes thru the processImage                                                                //method, calculates the average of all                                                               //the pixels, and wrties the stacked image                                                            //into a new ppm file
    
 };
 

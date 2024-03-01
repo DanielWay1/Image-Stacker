@@ -1,11 +1,16 @@
+/**
+ * @file main.cpp
+ * @author Gerardo Gonzalez & Daniel Way
+ * @date 2024-03-01
+ * @brief where the execution procces takes place
+ * 
+ * this is where the main function and any other nescessary code, like stacker and stackImages from the stacker class, are executed in the program 
+ */
 
-// Not sure how many of these we need in main but I went ahead and added them all.
-// Probably best to delete unneeded ones before turn in 
+
 #include <iostream>
 #include "stacker.h"
-#include <fstream>
 #include <string>
-#include <vector>
 
 
 using namespace std;
@@ -14,8 +19,6 @@ int main() {
 
   string imageName;
   int numImages;
-
-  // this output does not match the test case she showed on canvas. Not sure if we have to match it exactly but it might not be a bad idea to do so
 
   cout << "Please enter the image you wish to stack: ";
   cin >> imageName;
