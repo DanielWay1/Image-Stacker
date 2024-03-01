@@ -1,3 +1,13 @@
+/**
+ * @file stacker.h
+ * @author Gerardo Gonzalez n Daniel Way
+ * @date 2024-03-01
+ * @brief where the methods n members of the program live
+ * 
+ * this is where we initialize the required methods n memebers for the actual assignment 
+ */
+
+
 #ifndef STACKER_H
 #define STACKER_H
 
